@@ -29,7 +29,6 @@ function EditTodo({todo, editTodo, cancelEditTodo}) {
                 onKeyDown={handleKeyDown} 
                 value={value} 
                 type="text" 
-                placeholder="Modofiez votre To Do" 
                 className="input flex-fill mr-15"
             />
             <Button
