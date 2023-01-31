@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import themeContext from "./theme"
+import themeContext from "./context/theme"
 
 
 function Button({text, className, ...props}) {
