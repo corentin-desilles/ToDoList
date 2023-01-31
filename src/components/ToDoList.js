@@ -1,7 +1,7 @@
 import TodoItem from './ToDoItem';
 import EditTodo from './EditTodo';
 
-function TodoList({todoList, deleteTodo, toggleTodo, toggleEdit, editTodo}) {
+function TodoList({todoList, deleteTodo, toggleTodo, toggleEdit, editTodo, selectTodo}) {
     return  (
         <ul>
             {todoList.map((todo) => todo.edit ? (
@@ -18,6 +18,7 @@ function TodoList({todoList, deleteTodo, toggleTodo, toggleEdit, editTodo}) {
                 deleteTodo={() => deleteTodo(todo.id)}
                 toggleTodo={() => toggleTodo(todo.id) }
                 toggleEdit={() => toggleEdit(todo.id) }
+                selectTodo={() => selectTodo(todo.id)}
                 /> 
             ))}
         </ul>

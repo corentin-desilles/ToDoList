@@ -12,6 +12,7 @@ function App() {
             content,
             done: false,
             edit: false,
+            selected: false
         };
         setTodoList([ ...todoList, todo ]);
     }
@@ -47,13 +48,36 @@ function App() {
             )
         );
     }
+
+    function selectTodo(id) {
+        setTodoList(
+            todoList.map((todo) => 
+                todo.id === id 
+                ? {
+                    ...todo,
+                    selected: true,
+                }
+                : {
+                    ...todo,
+                    selected: false,
+                }
+            )
+        );
+    }
    
     return (    
         <div className="d-flex flex-row justify-content-center align-items-center p-20">
             <div className="card container p-20">
                 <h1 className="mb-20">To Do List</h1>
                 <AddTodo addTodo={addTodo}/>
-                <TodoList todoList={todoList} deleteTodo={deleteTodo} toggleTodo={toggleTodo} toggleEdit={toggleEdit} editTodo={editTodo} />
+                <TodoList 
+                    todoList={todoList} 
+                    deleteTodo={deleteTodo} 
+                    toggleTodo={toggleTodo} 
+                    toggleEdit={toggleEdit} 
+                    editTodo={editTodo} 
+                    selectTodo={selectTodo} 
+                />
             </div>
         </div> 
     )
