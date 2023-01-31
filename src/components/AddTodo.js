@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Button from "./Button";
 
 function AddTodo({ addTodo }) {
    const [value, setValue] = useState("");
@@ -29,9 +30,7 @@ function handleKeyDown(e) {
                     type="text" 
                     placeholder="Entrer votre To Do" 
                     className="input flex-fill mr-15"/>
-            <button onClick={handleClick} className="btn btn-primary">
-                    Ajouter
-            </button>
+            <Button text="Ajouter" onClick={handleClick} />
         </div>
     );
 }

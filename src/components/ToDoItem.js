@@ -1,38 +1,37 @@
+import Button from "./Button";
 
 function TodoItem({todo, deleteTodo, toggleTodo, toggleEdit, selectTodo}) {
     return(
         <li 
-        onClick={selectTodo}
-        className={`mb-10 d-flex flex-row justify-content-center align-items-center p-10 ${todo.selected ? 'selected' : ''} `}
+            onClick={selectTodo}
+            className={`mb-10 d-flex flex-row justify-content-center align-items-center p-10 ${todo.selected ? 'selected' : ''} `}
         >
             <span className="flex-fill mr-15">{todo.content} {todo.done && '✓'}</span>
-            <button 
+            <Button
                 onClick={(e) => {
                     e.stopPropagation();
                     toggleTodo();
                 }} 
-                className="btn btn-primary mr-15"
-            >
-                Valider
-            </button>
-            <button 
+                text = "Valider"
+                className="mr-15"
+                />
+
+            <Button
                 onClick={(e) => {
                     e.stopPropagation();
                     toggleEdit();
                 }} 
-                className="btn btn-primary mr-15"
-            >
-                Modifier
-            </button>
-            <button 
+                text = "Modifier"
+                className="mr-15"
+                />
+
+            <Button
                 onClick={(e) => {
                     e.stopPropagation();
                     deleteTodo();
                 }} 
-                className="btn btn-reverse-primary mr-15"
-            >
-                Supprimer
-            </button>
+                text = "Supprimer"
+                />
         </li>
     );
 }
